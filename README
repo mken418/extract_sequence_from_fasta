@@ -1,0 +1,32 @@
+The script, get_coords.py, can be used to extract sequences out of a fasta file given coodinates.
+The script takes in two files:
+	1) A fasta file of contigs, or chromosomes. NOTE: Each contig/chromosome must only be named numerically. Ex: ">1"
+		- NOTE: Each contig/chromosome must only be named numerically. Ex: ">1"
+		- ex: >1
+		      AGGGTAGCGTAGC...
+		      >2
+		      GGCTACTTA....
+		- NOTE: Most fasta files are fomatted with many seqeunces for the same contig/chromosome on different lines, as such:
+			ex: >1
+			    AGTGCGTTTGCAT
+			    TTGACGTGCGTGT
+			    TTGC...
+			    >2
+			    GGTAGTGCAGTGC
+			    GTGACCGT...
+			- this is no problem for the script, it will run regardless whether sequences exist on the same line or multiple lines
+	
+	2) A file containing the coordinates that you would like to extract. These should be in the format of: chromsome/contig#:seq-seq, with one coordinate per line
+		- ex: 1:45-100
+		      2:9809-1004
+		    ... 
+
+Required command line options:
+-fa (fasta file that you want to extract the sequence out of)
+-coords (file containing coordinates to be extracted)
+-out (name of file for script output, the output will be in fasta format)
+
+Future Updates:
+	- allow differently labelled contigs
+	- provide option for users to use the script for converting a fasta file into only one line of sequence per contig, chromosome, gene, etc... this is useful during file parsing in some pipelines
+	-add in error messages for easier user use if a sequence is out of range
