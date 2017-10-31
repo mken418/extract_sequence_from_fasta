@@ -4,7 +4,7 @@ import argparse
 
 #command line arguments
 parser=argparse.ArgumentParser()
-parser.add_argument('-fa', type=str, help='derived line contig fasta')
+parser.add_argument('-fa', type=str, help='contig fasta')
 parser.add_argument('-coords', type=str, help='coordintes to extract')
 parser.add_argument('-out', type=str, help='name for output file')
 args=parser.parse_args()
